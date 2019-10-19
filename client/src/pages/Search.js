@@ -41,10 +41,12 @@ class Books extends Component {
             API.getItemsByTitle(this.state.title)
                 .then(res => {
                 this.setState({results: res.data})
-            })
+                })
                 .catch(err => console.log(err));
         }
     };
+
+    
 
     render() {
         return (
@@ -79,7 +81,6 @@ class Books extends Component {
                                                 {book.title} by {book.author}
                                             </strong>
                                         </a>
-                                        <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                                     </ListItem>
                                 ))}
                             </List>
